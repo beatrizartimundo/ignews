@@ -24,6 +24,7 @@
     "stripe": "^8.160.0"
   },
   "devDependencies": {
+    "@types/next-auth": "^3.7.1",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "eslint": "7.30.0",
