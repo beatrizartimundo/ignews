@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { getPrismicClient } from "../../../services/prismic"
 import Head from 'next/head';
 import Link from "next/link";
@@ -51,8 +51,9 @@ export default function PostPreview({post}: PostPreviewProps){
         </>
     )
 }
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
+        //quais caminhos que vao gerar estaticamente no build
         paths: [],
         fallback: 'blocking'
     }
@@ -78,6 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params}) => {
     return {
         props: {
             post,
-        }
+        },
+        revalidate: 60*30,//30 minutos
     }
 }
