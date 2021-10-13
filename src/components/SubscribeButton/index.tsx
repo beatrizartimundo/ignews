@@ -1,11 +1,11 @@
 import { signIn, useSession } from 'next-auth/client'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import { getStripeJs } from '../../services/stripe-js'
 import { api } from '../../services/api'
 import styles from './styles.module.scss'
 
 interface SubscribeButtonProps{
-    priceId:string;
+    priceId?:string;
 }
 
 export function SubscribeButton({priceId}:SubscribeButtonProps) {
