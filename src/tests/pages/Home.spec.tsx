@@ -17,6 +17,8 @@ describe('Home page', () => {
     useSessionMocked.mockReturnValue([null,false])
     
     render(<Home product={{priceId: 'fake-price-id', amount: 'R$10,00'}}/>)
+    //gera o link do playground
+    // screen.logTestingPlaygroundURL()
 
     expect(screen.getByText('for R$10,00 month')).toBeInTheDocument()
   })

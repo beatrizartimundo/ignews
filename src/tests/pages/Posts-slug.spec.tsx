@@ -36,9 +36,10 @@ describe('Post slug', () => {
 
     expect(response).toEqual(
       expect.objectContaining({
-        redirect: expect.objectContaining({
-          destination: '/',
-        })
+        redirect: {
+          destination:"/posts/preview/my-new-post",
+          permanent: false,
+        }
       })
     )    
   })

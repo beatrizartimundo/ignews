@@ -9,5 +9,14 @@ module.exports = {
   moduleNameMapper: {
     "\\.(scss|css|sass)$": "identity-obj-proxy"
   },
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  collectCoverage :true,
+  "collectCoverageFrom": [
+    "src/**/*.tsx",
+    "!src/**/*spec.tsx",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!src/**/_app.tsx",
+    "!src/**/_document.tsx"
+  ],
 }
